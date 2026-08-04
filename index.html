@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Futsal · Manual y Material de Entrenamiento</title>
+<title>Darío Blanco · Futsal — Manual y Material de Entrenamiento</title>
 
 <!--
   ================================================================
@@ -18,16 +18,18 @@
   - Para agregar/quitar EJERCICIOS: lo mismo con "const ejercicios = [...]".
   - Para el MANUAL: cada capítulo es un bloque <details class="capitulo">.
     Copiá uno, pegalo, y cambiá el título y el texto.
-  - Los colores están arriba en ":root" si algún día querés cambiarlos.
+  - Las fotos están en la carpeta /images. Para cambiarlas, subí una
+    foto nueva a esa carpeta con el mismo nombre (hero.jpg, dario.jpg)
+    o cambiá el nombre de archivo en el código donde dice src="images/...".
+  - El PDF completo del manual está en /manual-dario-blanco.pdf.
 
-  No hace falta saber programar: es como editar un documento de texto,
-  solo hay que tener cuidado de no borrar las etiquetas < > que rodean
-  cada texto.
+  IMPORTANTE: cuando subas esta web a GitHub, subí también las carpetas
+  "images" y "files" enteras (no solo el index.html), para que las fotos
+  y el PDF se vean online.
   ================================================================
 -->
 
 <style>
-  /* ===== TOKENS DE DISEÑO ===== */
   :root{
     --cream:#ECE1C8;
     --cream-soft:#F5EEDD;
@@ -37,13 +39,10 @@
     --court-blue-dark:#1E3F5C;
     --line-yellow:#E8AC3D;
     --court-red:#B23A2E;
-    --radius:2px;
   }
 
   *{box-sizing:border-box; margin:0; padding:0;}
-
   html{scroll-behavior:smooth;}
-
   body{
     background:var(--cream);
     color:var(--ink);
@@ -51,7 +50,6 @@
     line-height:1.6;
     overflow-x:hidden;
   }
-
   h1,h2,h3,.display{
     font-family:'Oswald', sans-serif;
     text-transform:uppercase;
@@ -59,85 +57,50 @@
     color:var(--ink);
     line-height:1.05;
   }
-
   .mono{
     font-family:'JetBrains Mono', monospace;
     letter-spacing:0.08em;
     text-transform:uppercase;
     font-size:0.75rem;
   }
-
   a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
 
-  .wrap{
-    max-width:1080px;
-    margin:0 auto;
-    padding:0 24px;
-  }
-
-  /* ===== ARCO — elemento de firma visual =====
-     Reutilizamos el arco del área de penal de futsal (a diferencia
-     del fútbol, en futsal el área es un cuarto de círculo) como
-     motivo gráfico recurrente para separar secciones. */
-  .arco-divisor{
-    width:100%;
-    height:60px;
-    display:block;
-  }
+  .arco-divisor{ width:100%; height:60px; display:block; }
   .arco-divisor path{ fill:var(--cream-soft); }
   .arco-divisor.invertido path{ fill:var(--cream); }
 
   /* ===== NAV ===== */
   header{
     position:sticky; top:0; z-index:50;
-    background:var(--ink);
-    color:var(--cream);
+    background:var(--ink); color:var(--cream);
     border-bottom:3px solid var(--line-yellow);
   }
-  .nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:14px 24px;
-  }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 24px; }
   .logo{
-    font-family:'Oswald', sans-serif;
-    font-size:1.3rem;
-    text-transform:uppercase;
-    letter-spacing:0.04em;
+    font-family:'Oswald', sans-serif; font-size:1.25rem;
+    text-transform:uppercase; letter-spacing:0.03em;
     display:flex; align-items:baseline; gap:8px;
   }
   .logo span{ color:var(--line-yellow); }
-  nav ul{
-    list-style:none;
-    display:flex; gap:28px;
-  }
+  nav ul{ list-style:none; display:flex; gap:26px; }
   nav ul li a{
-    text-decoration:none;
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.78rem;
-    text-transform:uppercase;
-    letter-spacing:0.08em;
-    color:var(--cream);
-    border-bottom:2px solid transparent;
-    padding-bottom:4px;
+    text-decoration:none; font-family:'JetBrains Mono', monospace;
+    font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--cream); border-bottom:2px solid transparent; padding-bottom:4px;
     transition:border-color .2s;
   }
   nav ul li a:hover, nav ul li a:focus-visible{ border-color:var(--line-yellow); }
   .menu-btn{
-    display:none;
-    background:none; border:1px solid var(--cream); color:var(--cream);
-    font-family:'JetBrains Mono', monospace; font-size:0.8rem;
-    padding:6px 10px; cursor:pointer;
+    display:none; background:none; border:1px solid var(--cream); color:var(--cream);
+    font-family:'JetBrains Mono', monospace; font-size:0.8rem; padding:6px 10px; cursor:pointer;
   }
-
-  @media (max-width:720px){
+  @media (max-width:760px){
     nav ul{
-      position:absolute; top:100%; left:0; right:0;
-      background:var(--ink);
-      flex-direction:column; gap:0;
-      max-height:0; overflow:hidden;
-      transition:max-height .3s ease;
+      position:absolute; top:100%; left:0; right:0; background:var(--ink);
+      flex-direction:column; gap:0; max-height:0; overflow:hidden; transition:max-height .3s ease;
     }
-    nav ul.abierto{ max-height:320px; }
+    nav ul.abierto{ max-height:360px; }
     nav ul li{ border-top:1px solid rgba(236,225,200,0.15); }
     nav ul li a{ display:block; padding:14px 24px; }
     .menu-btn{ display:block; }
@@ -146,171 +109,136 @@
   /* ===== HERO ===== */
   .hero{
     position:relative;
-    background:var(--court-blue);
+    background:
+      linear-gradient(180deg, rgba(23,32,43,0.55), rgba(30,63,92,0.88)),
+      url('hero.jpg') center 30% / cover no-repeat;
     color:var(--cream);
-    padding:90px 24px 70px;
+    padding:100px 24px 80px;
     overflow:hidden;
   }
   .hero::after{
-    /* cuarto de círculo gigante, como el área de futsal, de fondo */
     content:"";
-    position:absolute;
-    right:-140px; bottom:-140px;
-    width:420px; height:420px;
-    border:3px solid rgba(236,225,200,0.25);
-    border-radius:50%;
+    position:absolute; right:-140px; bottom:-140px; width:420px; height:420px;
+    border:3px solid rgba(236,225,200,0.25); border-radius:50%;
     clip-path:inset(0 0 50% 50%);
   }
-  .hero-inner{
-    max-width:1080px; margin:0 auto;
-    position:relative; z-index:2;
-  }
+  .hero-inner{ max-width:1080px; margin:0 auto; position:relative; z-index:2; }
   .eyebrow{
-    color:var(--line-yellow);
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.8rem;
-    letter-spacing:0.15em;
-    text-transform:uppercase;
-    margin-bottom:18px;
-    display:inline-block;
-    border-bottom:1px solid var(--line-yellow);
-    padding-bottom:6px;
+    color:var(--line-yellow); font-family:'JetBrains Mono', monospace;
+    font-size:0.8rem; letter-spacing:0.15em; text-transform:uppercase;
+    margin-bottom:18px; display:inline-block; border-bottom:1px solid var(--line-yellow); padding-bottom:6px;
   }
-  .hero h1{
-    font-size:clamp(2.4rem, 6vw, 4.2rem);
-    max-width:14ch;
-    margin-bottom:20px;
-  }
-  .hero p{
-    max-width:52ch;
-    font-size:1.05rem;
-    color:rgba(236,225,200,0.9);
-    margin-bottom:32px;
-  }
+  .hero h1{ font-size:clamp(2.2rem, 5.6vw, 3.9rem); max-width:16ch; margin-bottom:20px; }
+  .hero p{ max-width:54ch; font-size:1.05rem; color:rgba(236,225,200,0.92); margin-bottom:32px; }
   .btn{
-    display:inline-block;
-    font-family:'JetBrains Mono', monospace;
-    text-transform:uppercase;
-    letter-spacing:0.06em;
-    font-size:0.85rem;
-    text-decoration:none;
-    padding:14px 26px;
-    border:2px solid var(--line-yellow);
-    color:var(--ink);
-    background:var(--line-yellow);
-    transition:transform .15s, background .15s;
+    display:inline-block; font-family:'JetBrains Mono', monospace; text-transform:uppercase;
+    letter-spacing:0.06em; font-size:0.85rem; text-decoration:none; padding:14px 26px;
+    border:2px solid var(--line-yellow); color:var(--ink); background:var(--line-yellow);
+    transition:transform .15s;
   }
   .btn:hover{ transform:translateY(-2px); }
-  .btn.ghost{
-    background:transparent; color:var(--cream); border-color:var(--cream);
-    margin-left:12px;
-  }
+  .btn.ghost{ background:transparent; color:var(--cream); border-color:var(--cream); margin-left:12px; }
   .hero-actions{ display:flex; flex-wrap:wrap; gap:12px; }
 
-  /* ===== SECCIONES GENERALES ===== */
   section{ padding:70px 0; }
   .section-head{
-    margin-bottom:44px;
-    display:flex; align-items:flex-end; justify-content:space-between;
-    gap:20px; flex-wrap:wrap;
-    border-bottom:3px solid var(--ink);
-    padding-bottom:18px;
+    margin-bottom:44px; display:flex; align-items:flex-end; justify-content:space-between;
+    gap:20px; flex-wrap:wrap; border-bottom:3px solid var(--ink); padding-bottom:18px;
   }
   .section-head h2{ font-size:clamp(1.8rem, 4vw, 2.6rem); }
   .section-head .mono{ color:var(--ink-soft); }
 
+  /* ===== SOBRE MÍ ===== */
+  #sobre-mi .contenido-sobre-mi{
+    display:grid; grid-template-columns:220px 1fr; gap:36px; align-items:start;
+  }
+  #sobre-mi img{
+    width:100%; aspect-ratio:3/4; object-fit:cover; border:1px solid rgba(23,32,43,0.15);
+  }
+  #sobre-mi p{ color:var(--ink-soft); margin-bottom:14px; max-width:62ch; }
+  @media (max-width:640px){
+    #sobre-mi .contenido-sobre-mi{ grid-template-columns:1fr; }
+    #sobre-mi img{ max-width:220px; }
+  }
+
   /* ===== MANUAL ===== */
   #manual{ background:var(--cream-soft); }
-  .capitulo{
-    background:var(--cream);
-    border:1px solid rgba(23,32,43,0.12);
-    margin-bottom:12px;
-  }
+  .manual-intro{ color:var(--ink-soft); max-width:70ch; margin-bottom:30px; }
+  .capitulo{ background:var(--cream); border:1px solid rgba(23,32,43,0.12); margin-bottom:12px; }
   .capitulo summary{
-    cursor:pointer;
-    list-style:none;
-    display:flex; align-items:center; gap:16px;
-    padding:18px 22px;
-    font-family:'Oswald', sans-serif;
-    text-transform:uppercase;
-    letter-spacing:0.02em;
-    font-size:1.05rem;
+    cursor:pointer; list-style:none; display:flex; align-items:center; gap:16px;
+    padding:18px 22px; font-family:'Oswald', sans-serif; text-transform:uppercase;
+    letter-spacing:0.02em; font-size:1.02rem;
   }
   .capitulo summary::-webkit-details-marker{ display:none; }
   .capitulo summary::before{
-    content:"+";
-    font-family:'JetBrains Mono', monospace;
-    color:var(--court-blue);
-    font-size:1.2rem;
-    width:20px;
+    content:"+"; font-family:'JetBrains Mono', monospace; color:var(--court-blue);
+    font-size:1.2rem; width:20px;
   }
   .capitulo[open] summary::before{ content:"–"; }
-  .capitulo .contenido{
-    padding:0 22px 22px 58px;
-    color:var(--ink-soft);
-  }
+  .capitulo .contenido{ padding:0 22px 22px 58px; color:var(--ink-soft); }
+  .capitulo .contenido p{ margin-bottom:12px; }
   .capitulo .num{
-    font-family:'JetBrains Mono', monospace;
-    color:var(--line-yellow);
-    background:var(--ink);
-    padding:2px 8px;
-    font-size:0.8rem;
+    font-family:'JetBrains Mono', monospace; color:var(--line-yellow);
+    background:var(--ink); padding:2px 8px; font-size:0.78rem;
   }
+  .frase-destacada{
+    font-family:'Oswald', sans-serif; font-style:normal; text-transform:none;
+    letter-spacing:0; font-size:1.15rem; color:var(--court-blue-dark);
+    border-left:3px solid var(--line-yellow); padding-left:16px; margin:16px 0;
+  }
+  .tabla-semanas{ width:100%; border-collapse:collapse; margin-top:8px; font-size:0.92rem; }
+  .tabla-semanas th, .tabla-semanas td{
+    text-align:left; padding:10px 12px; border-bottom:1px solid rgba(23,32,43,0.12);
+  }
+  .tabla-semanas th{ font-family:'JetBrains Mono', monospace; font-size:0.72rem; text-transform:uppercase; color:var(--ink-soft); }
+  .descarga-pdf{
+    display:flex; align-items:center; gap:14px; background:var(--ink); color:var(--cream);
+    padding:20px 24px; margin-top:8px; margin-bottom:30px;
+  }
+  .descarga-pdf .btn{ margin-left:auto; white-space:nowrap; }
+  .descarga-pdf p{ font-size:0.92rem; color:rgba(236,225,200,0.85); }
+  @media (max-width:560px){ .descarga-pdf{ flex-direction:column; align-items:flex-start; } .descarga-pdf .btn{ margin-left:0; } }
 
   /* ===== VIDEOS ===== */
-  .grid-videos{
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(280px,1fr));
-    gap:24px;
-  }
+  .grid-videos{ display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:24px; }
   .video-card{ background:var(--cream-soft); border:1px solid rgba(23,32,43,0.12); }
-  .video-card .frame{
-    position:relative; width:100%; padding-top:56.25%;
-    background:var(--ink);
+  .video-card .frame{ position:relative; width:100%; padding-top:56.25%; background:var(--ink); }
+  .video-card .frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .video-card .frame.link-card{
+    display:flex; align-items:center; justify-content:center; text-decoration:none;
+    background:linear-gradient(160deg, var(--court-blue), var(--ink));
   }
-  .video-card .frame iframe{
-    position:absolute; inset:0; width:100%; height:100%; border:0;
+  .video-card .frame.link-card .play{
+    width:56px; height:56px; border-radius:50%; background:var(--line-yellow);
+    display:flex; align-items:center; justify-content:center; color:var(--ink); font-size:1.3rem;
   }
   .video-card .info{ padding:16px 18px; }
-  .video-card h3{ font-size:1.05rem; margin-bottom:6px; }
-  .video-card p{ color:var(--ink-soft); font-size:0.92rem; }
+  .video-card h3{ font-size:1.02rem; margin-bottom:6px; }
+  .video-card p{ color:var(--ink-soft); font-size:0.9rem; }
 
   /* ===== EJERCICIOS ===== */
   #ejercicios{ background:var(--court-blue-dark); color:var(--cream); }
   #ejercicios .section-head{ border-bottom-color:var(--cream); }
   #ejercicios .section-head .mono{ color:rgba(236,225,200,0.7); }
-  .grid-ejercicios{
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(260px,1fr));
-    gap:20px;
-  }
-  .ejercicio{
-    background:rgba(236,225,200,0.06);
-    border:1px solid rgba(236,225,200,0.25);
-    padding:22px;
-  }
+  .grid-ejercicios{ display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:20px; }
+  .ejercicio{ background:rgba(236,225,200,0.06); border:1px solid rgba(236,225,200,0.25); padding:22px; }
   .ejercicio .mono{ color:var(--line-yellow); }
-  .ejercicio h3{ font-size:1.15rem; margin:8px 0 10px; color:var(--cream); }
-  .ejercicio p{ color:rgba(236,225,200,0.85); font-size:0.94rem; }
+  .ejercicio h3{ font-size:1.1rem; margin:8px 0 10px; color:var(--cream); }
+  .ejercicio p{ color:rgba(236,225,200,0.85); font-size:0.93rem; }
   .ejercicio .meta{
-    display:flex; gap:14px; margin-top:14px;
-    font-family:'JetBrains Mono', monospace; font-size:0.75rem;
-    color:var(--line-yellow);
+    display:flex; gap:14px; margin-top:14px; font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem; color:var(--line-yellow);
   }
 
   /* ===== CONTACTO ===== */
   #contacto .wrap{ max-width:640px; }
-  .contacto-item{
-    display:flex; gap:14px; align-items:baseline;
-    padding:14px 0; border-bottom:1px solid rgba(23,32,43,0.15);
-  }
+  .contacto-item{ display:flex; gap:14px; align-items:baseline; padding:14px 0; border-bottom:1px solid rgba(23,32,43,0.15); }
   .contacto-item .mono{ color:var(--court-blue); min-width:110px; }
 
   footer{
-    background:var(--ink); color:rgba(236,225,200,0.6);
-    text-align:center; padding:28px 24px;
-    font-family:'JetBrains Mono', monospace; font-size:0.75rem;
-    letter-spacing:0.05em;
+    background:var(--ink); color:rgba(236,225,200,0.6); text-align:center; padding:28px 24px;
+    font-family:'JetBrains Mono', monospace; font-size:0.75rem; letter-spacing:0.05em;
   }
   footer span{ color:var(--line-yellow); }
 </style>
@@ -320,8 +248,7 @@
 <!-- ===== NAV ===== -->
 <header>
   <div class="nav wrap" style="padding-left:0; padding-right:0;">
-    <!-- EDITAR AQUÍ: nombre de tu academia/equipo -->
-    <div class="logo">FUTSAL<span>/CLUB</span></div>
+    <div class="logo">DARÍO<span>/BLANCO</span></div>
     <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">MENÚ</button>
     <ul id="menuList">
       <li><a href="#inicio">Inicio</a></li>
@@ -336,15 +263,13 @@
 <!-- ===== HERO ===== -->
 <section class="hero" id="inicio">
   <div class="hero-inner">
-    <span class="eyebrow">5 contra 5 · Pista cubierta</span>
-    <!-- EDITAR AQUÍ: título principal -->
-    <h1>El manual y el material que faltaban en tu cancha</h1>
-    <!-- EDITAR AQUÍ: bajada / descripción corta -->
-    <p>Todo lo que trabajamos en los entrenamientos: el manual completo,
-       videos de jugadas y ejercicios listos para llevar a la pista.</p>
+    <span class="eyebrow">Entrenador de Fútbol Sala</span>
+    <h1>La preparación física, integrada al juego</h1>
+    <p>Manual, material de entrenamiento y filosofía de trabajo de Darío Blanco:
+       metodología y planificación de la pretemporada en el futsal amateur.</p>
     <div class="hero-actions">
       <a href="#manual" class="btn">Ver el manual</a>
-      <a href="#videos" class="btn ghost">Ver videos</a>
+      <a href="#ejercicios" class="btn ghost">Ver ejercicios</a>
     </div>
   </div>
 </section>
@@ -353,47 +278,193 @@
   <path d="M0,60 L0,0 Q 1080,0 1080,60 Z"/>
 </svg>
 
+<!-- ===== SOBRE MÍ ===== -->
+<section id="sobre-mi">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Sobre mí</h2>
+      <span class="mono">Prof. Ed. Física · Entrenador de Futsal</span>
+    </div>
+    <div class="contenido-sobre-mi">
+      <img src="dario.jpg" alt="Darío Blanco en la cancha">
+      <div>
+        <p>Soy Darío Blanco, profesor de Educación Física y entrenador de fútbol sala.
+           Este espacio nació para compartir la metodología que uso hoy para planificar
+           la pretemporada: integrar la preparación física con la técnica, la táctica y
+           la toma de decisiones, siempre al servicio del juego.</p>
+        <p>Durante años pensé que una buena pretemporada era aquella en la que los
+           jugadores terminaban agotados. Con el tiempo entendí que el objetivo no es
+           cansarlos, sino construir un equipo desde el primer día.</p>
+        <p>Acá vas a encontrar el manual completo, videos de entrenamientos y ejercicios
+           que uso en la cancha.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="arco-divisor invertido" viewBox="0 0 1080 60" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,0 L1080,0 L1080,60 Q 0,60 0,0 Z"/>
+</svg>
+
 <!-- ===== MANUAL ===== -->
 <section id="manual">
   <div class="wrap">
     <div class="section-head">
       <h2>Manual</h2>
-      <span class="mono">Capítulos</span>
+      <span class="mono">7 capítulos</span>
     </div>
 
-    <!-- Cada capítulo es un bloque <details>. Copiá y pegá para agregar más. -->
+    <p class="manual-intro">"La preparación física va de la mano con el juego, nunca sin
+       él." — Metodología y planificación de la pretemporada en el futsal amateur, pensada
+       para equipos que entrenan tres o cuatro veces por semana, con tiempo y recursos
+       limitados.</p>
+
+    <div class="descarga-pdf">
+      <div>
+        <strong style="font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.02em;">Manual completo en PDF</strong>
+        <p>Descargá "La Preparación Física Integrada al Juego" con todos los capítulos, diagramas y fichas por semana.</p>
+      </div>
+      <a class="btn" href="manual-dario-blanco.pdf" target="_blank" rel="noopener">Descargar PDF</a>
+    </div>
 
     <details class="capitulo" open>
-      <summary><span class="num">01</span> Introducción</summary>
+      <summary><span class="num">00</span> Antes de empezar</summary>
       <div class="contenido">
-        <!-- EDITAR AQUÍ: pegá el texto de tu manual en este párrafo -->
-        <p>Pegá acá la introducción de tu manual. Podés escribir varios
-           párrafos: solo agregá más etiquetas &lt;p&gt;...&lt;/p&gt; debajo
-           de esta.</p>
+        <p>Este mini manual nace de la necesidad de aportar algo específico al deporte
+           amateur, sin pretender tener toda la verdad al respecto.</p>
+        <p>Durante mucho tiempo pensé que una buena pretemporada era aquella en la que
+           los jugadores terminaban agotados después de cada sesión. Con los años
+           descubrí que estaba equivocado: el verdadero objetivo no es cansar a los
+           jugadores, sino crear equipos desde el inicio y construir jugadores capaces
+           de entender el juego y responder a las situaciones que este les plantea.</p>
+        <p>No vas a encontrar acá una colección de ejercicios para copiar, ni una
+           planificación para seguir al pie de la letra. Vas a encontrar una forma de
+           entender la pretemporada: una metodología que sigo construyendo a partir del
+           estudio, la experiencia y los errores que cometí como entrenador y profesor.</p>
       </div>
     </details>
 
     <details class="capitulo">
-      <summary><span class="num">02</span> Fundamentos técnicos</summary>
+      <summary><span class="num">01</span> La pretemporada como proceso</summary>
       <div class="contenido">
-        <p>Reemplazá este texto con el contenido de tu capítulo sobre
-           fundamentos: control, pase, conducción, etc.</p>
+        <p class="frase-destacada">"La pretemporada empieza mucho antes del primer entrenamiento."</p>
+        <p>Reducir la pretemporada a la preparación física sería simplificar un proceso
+           mucho más complejo. Es el momento en que un grupo de jugadores empieza a
+           convertirse en equipo: el entrenador transmite una idea de juego, establece
+           normas de trabajo y construye los hábitos que acompañarán al grupo durante
+           toda la temporada.</p>
+        <p>Un equipo también necesita aprender a convivir, comunicarse, interpretar el
+           juego y responder colectivamente a las situaciones que plantea un partido. Por
+           eso entiendo la preparación física como una herramienta al servicio del
+           rendimiento colectivo, y no como un fin en sí mismo.</p>
+        <p>Este manual está pensado para la realidad del futsal amateur: equipos que
+           entrenan tres o cuatro veces por semana, con jugadores que trabajan o estudian,
+           tiempo limitado y recursos escasos. No necesitamos entrenar más. Necesitamos
+           entrenar mejor.</p>
       </div>
     </details>
 
     <details class="capitulo">
-      <summary><span class="num">03</span> Sistemas de juego</summary>
+      <summary><span class="num">02</span> Principios metodológicos de la planificación</summary>
       <div class="contenido">
-        <p>Reemplazá este texto con el contenido de tu capítulo sobre
-           sistemas de juego (1-2-1, 2-2, rombo, etc.).</p>
+        <p class="frase-destacada">"No planifico entrenamientos. Planifico un proceso."</p>
+        <p>Antes de diseñar una sesión siempre respondo una pregunta: ¿cómo quiero que
+           juegue mi equipo? La planificación nunca comienza con los ejercicios, comienza
+           con una idea. Cuando el modelo de juego es claro, los ejercicios dejan de
+           elegirse por costumbre y empiezan a elegirse por el comportamiento que generan.</p>
+        <p>No entreno ejercicios, entreno comportamientos: si quiero mejorar la presión
+           tras pérdida, diseño tareas donde esa situación aparezca constantemente. El
+           ejercicio deja de ser el protagonista; el protagonista es el comportamiento que
+           buscamos entrenar.</p>
+        <p>Primero defino el objetivo del entrenamiento, después selecciono la tarea, y
+           recién entonces ajusto las variables que determinan la carga: el espacio, la
+           cantidad de jugadores, el tiempo de trabajo, las pausas y las reglas. La carga
+           aparece como consecuencia de la tarea, no como el punto de partida.</p>
       </div>
     </details>
 
     <details class="capitulo">
-      <summary><span class="num">04</span> Preparación física</summary>
+      <summary><span class="num">03</span> Organizar la pretemporada</summary>
       <div class="contenido">
-        <p>Reemplazá este texto con el contenido de tu capítulo sobre
-           preparación física.</p>
+        <p class="frase-destacada">"Una buena planificación no es la que tiene más contenido. Es la que presenta el contenido adecuado en el momento adecuado."</p>
+        <p>Propongo una planificación de seis semanas porque, dentro del futsal amateur,
+           representa un tiempo suficiente para construir una base sólida sin prolongar
+           innecesariamente el proceso. No es una fórmula obligatoria, sino una propuesta
+           adaptable a cada contexto.</p>
+        <p>Cada semana debe responder a una necesidad diferente del equipo, siguiendo una
+           secuencia: primero nos adaptamos, después construimos, más adelante nos
+           consolidamos y finalmente competimos. Toda planificación, además, debe estar
+           preparada para cambiar: lesiones, ausencias o cambios de calendario forman
+           parte del trabajo cotidiano.</p>
+      </div>
+    </details>
+
+    <details class="capitulo">
+      <summary><span class="num">04</span> Planificación práctica: seis semanas</summary>
+      <div class="contenido">
+        <p>Estructura general de la pretemporada, semana a semana:</p>
+        <table class="tabla-semanas">
+          <thead><tr><th>Semana</th><th>Objetivo</th><th>Carga</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Construir las bases — adaptación al entrenamiento</td><td>Baja → Media</td></tr>
+            <tr><td>2</td><td>Consolidar y progresar — mayor intensidad</td><td>Media → Alta</td></tr>
+            <tr><td>3</td><td>Consolidar una idea de juego</td><td>Alta</td></tr>
+            <tr><td>4</td><td>Del entrenamiento a la competición — primeros amistosos</td><td>Media-Alta + amistoso</td></tr>
+            <tr><td>5</td><td>Consolidar una identidad</td><td>Media-Alta + amistoso</td></tr>
+            <tr><td>6</td><td>Llegar listos para competir — tapering</td><td>Descenso progresivo</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:14px;">Cada semana combina contenidos condicionales, técnicos,
+           tácticos y psicológicos integrados con balón, siguiendo el sistema de colores
+           del manual (amarillo: baja intensidad, naranja: media, rojo: alta, morado:
+           pico competitivo). El detalle completo de cada sesión está en el PDF.</p>
+      </div>
+    </details>
+
+    <details class="capitulo">
+      <summary><span class="num">05</span> Lo que aprendí después de muchas pretemporadas</summary>
+      <div class="contenido">
+        <p class="frase-destacada">"Las mejores decisiones que tomo hoy nacieron de los errores que cometí ayer."</p>
+        <p>Con los años entendí que el cansancio desaparece en pocas horas, pero los
+           hábitos permanecen toda la temporada. Hoy valoro mucho más a un equipo que
+           entrena con intensidad, entiende el juego y sabe competir, que a uno que
+           simplemente soporta grandes cargas de trabajo.</p>
+        <p>El entrenador también aprende: al otro día de cada sesión intento responder
+           tres preguntas simples — ¿qué salió bien?, ¿qué podría haber hecho mejor?, ¿qué
+           voy a cambiar en el próximo entrenamiento? Una buena pretemporada nunca
+           garantiza el éxito, pero ofrece una base sólida sobre la que el equipo podrá
+           crecer durante el año.</p>
+      </div>
+    </details>
+
+    <details class="capitulo">
+      <summary><span class="num">06</span> El entrenador frente a la primera práctica</summary>
+      <div class="contenido">
+        <p class="frase-destacada">"La planificación termina cuando empieza el entrenamiento. A partir de ese momento, comienza la gestión del entrenador."</p>
+        <p>El primer entrenamiento no debe ser especial por la cantidad de ejercicios,
+           sino por el mensaje que transmite: vamos a entrenar con intensidad, la pelota
+           va a estar presente en casi todas las tareas, el error forma parte del
+           aprendizaje y el compromiso es innegociable.</p>
+        <p>Diez ideas que intento no olvidar: la pelota debe estar presente siempre que
+           sea posible; no entreno ejercicios, entreno comportamientos; la intensidad
+           nace de la tarea; explicar menos suele enseñar más; el jugador aprende
+           resolviendo problemas; la progresión vale más que la improvisación; y ningún
+           resultado cambia una metodología en una semana.</p>
+      </div>
+    </details>
+
+    <details class="capitulo">
+      <summary><span class="num">07</span> Del papel a la cancha</summary>
+      <div class="contenido">
+        <p>Aplicación práctica de una pretemporada de seis semanas para un equipo amateur
+           con cuatro sesiones semanales (adaptable a tres). Cada microciclo sigue la
+           progresión: <em>Adaptar → Construir → Consolidar → Transferir → Consolidar
+           identidad → Competir.</em></p>
+        <p>La carga se organiza con un sistema de colores: amarillo para tareas de baja
+           intensidad y adaptación, naranja para desarrollo y mayor volumen, rojo para
+           tareas competitivas de alta intensidad, y un color especial para los partidos
+           amistosos. El desarrollo completo de los seis microciclos, sesión por sesión,
+           está disponible en el PDF descargable.</p>
       </div>
     </details>
 
@@ -433,15 +504,13 @@
       <h2>Contacto</h2>
       <span class="mono">Escribinos</span>
     </div>
-    <!-- EDITAR AQUÍ: tus datos de contacto -->
-    <div class="contacto-item"><span class="mono">Email</span><a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a></div>
-    <div class="contacto-item"><span class="mono">WhatsApp</span><span>+54 9 11 0000-0000</span></div>
-    <div class="contacto-item"><span class="mono">Instagram</span><a href="#">@tucuenta</a></div>
+    <div class="contacto-item"><span class="mono">Email</span><a href="mailto:pfdarioblanco@gmail.com">pfdarioblanco@gmail.com</a></div>
+    <div class="contacto-item"><span class="mono">Instagram</span><a href="https://www.instagram.com/p/DZnaW6pDC71/" target="_blank" rel="noopener">@pfdarioblanco</a></div>
   </div>
 </section>
 
 <footer>
-  © <span id="anio"></span> <span>FUTSAL/CLUB</span> — Sitio hecho para compartir material de entrenamiento.
+  © <span id="anio"></span> <span>DARÍO BLANCO</span> — Preparación física y planificación del fútbol sala.
 </footer>
 
 <script>
@@ -452,38 +521,46 @@
   menuBtn.addEventListener('click', () => menuList.classList.toggle('abierto'));
 
   /* ================================================================
-     VIDEOS — para agregar uno nuevo, copiá un bloque { ... } y
-     pegalo dentro de los corchetes []. "id" es el código que aparece
-     en la URL de YouTube después de "watch?v=".
+     VIDEOS — "tipo" puede ser "youtube" o "instagram".
+     Para YouTube: "id" es el código que aparece en la URL después de
+     "watch?v=". Para Instagram: "url" es el link al posteo/reel.
      ================================================================ */
   const videos = [
-    { id: "dQw4w9WgXcQ", titulo: "Jugada de ataque 2-2", desc: "Ejemplo: reemplazá por tu video real." },
-    { id: "dQw4w9WgXcQ", titulo: "Transición defensa-ataque", desc: "Ejemplo: reemplazá por tu video real." },
-    { id: "dQw4w9WgXcQ", titulo: "Pívot y pared", desc: "Ejemplo: reemplazá por tu video real." },
+    { tipo: "instagram", url: "https://www.instagram.com/p/DZnaW6pDC71/", titulo: "Publicación en Instagram", desc: "Mirá el contenido completo en @pfdarioblanco." },
+    { tipo: "youtube", id: "dQw4w9WgXcQ", titulo: "Ejemplo de video 1", desc: "Reemplazá este id por el de tu video real de YouTube." },
+    { tipo: "youtube", id: "dQw4w9WgXcQ", titulo: "Ejemplo de video 2", desc: "Reemplazá este id por el de tu video real de YouTube." },
   ];
 
   const gridVideos = document.getElementById('gridVideos');
   document.getElementById('contadorVideos').textContent = videos.length + " piezas";
   videos.forEach(v => {
-    gridVideos.innerHTML += `
-      <div class="video-card">
-        <div class="frame">
-          <iframe src="https://www.youtube.com/embed/${v.id}" title="${v.titulo}" allowfullscreen></iframe>
-        </div>
-        <div class="info">
-          <h3>${v.titulo}</h3>
-          <p>${v.desc}</p>
-        </div>
-      </div>`;
+    if (v.tipo === "instagram") {
+      gridVideos.innerHTML += `
+        <div class="video-card">
+          <a class="frame link-card" href="${v.url}" target="_blank" rel="noopener">
+            <span class="play">▶</span>
+          </a>
+          <div class="info"><h3>${v.titulo}</h3><p>${v.desc}</p></div>
+        </div>`;
+    } else {
+      gridVideos.innerHTML += `
+        <div class="video-card">
+          <div class="frame">
+            <iframe src="https://www.youtube.com/embed/${v.id}" title="${v.titulo}" allowfullscreen></iframe>
+          </div>
+          <div class="info"><h3>${v.titulo}</h3><p>${v.desc}</p></div>
+        </div>`;
+    }
   });
 
   /* ================================================================
-     EJERCICIOS — copiá un bloque { ... } para agregar uno nuevo.
+     EJERCICIOS — tomados de la Semana 1-3 del manual.
      ================================================================ */
   const ejercicios = [
-    { num: "01", nombre: "Rondo 4v1", objetivo: "Conservación y presión", desc: "Cuatro jugadores mantienen la posesión contra un defensor en espacio reducido.", jugadores: "5", duracion: "10 min" },
-    { num: "02", nombre: "Salida en 1-2-1", objetivo: "Construcción desde el arquero", desc: "Trabajo de salida limpia contra presión alta del rival.", jugadores: "6", duracion: "15 min" },
-    { num: "03", nombre: "Definición pívot-ala", objetivo: "Finalización", desc: "Circuito de centro y definición con apoyo del pívot.", jugadores: "4", duracion: "12 min" },
+    { num: "01", nombre: "Rondo 4x4 + 2 comodines", objetivo: "Adaptación / conservación", desc: "Posesión en espacio amplio con comodines, ritmo bajo-moderado, pausas activas cada 3 minutos.", semana: "Semana 1" },
+    { num: "02", nombre: "Duelos 1x1 + 1 comodín", objetivo: "Fuerza integrada", desc: "Arranque y frenado con oposición real, pelota que ingresa rápido hacia portería.", semana: "Semana 1-2" },
+    { num: "03", nombre: "Transición 3x3 + 1 comodín", objetivo: "Presión tras pérdida", desc: "Series cortas repetidas de transición ofensiva-defensiva tras recuperación.", semana: "Semana 2" },
+    { num: "04", nombre: "Bloqueos y paralelas 3x3", objetivo: "Ocupación de espacios", desc: "Juego reducido incorporando bloqueos, paralelas y sobreposiciones para generar ventajas.", semana: "Semana 3" },
   ];
 
   const gridEjercicios = document.getElementById('gridEjercicios');
@@ -494,10 +571,7 @@
         <span class="mono">${e.num} · ${e.objetivo}</span>
         <h3>${e.nombre}</h3>
         <p>${e.desc}</p>
-        <div class="meta">
-          <span>👥 ${e.jugadores} jugadores</span>
-          <span>⏱ ${e.duracion}</span>
-        </div>
+        <div class="meta"><span>📅 ${e.semana}</span></div>
       </div>`;
   });
 </script>
