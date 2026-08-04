@@ -252,7 +252,7 @@
 
   /* ===== VIDEOS ===== */
   #videos{ background:var(--paper); }
-  .grid-videos{ display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:22px; }
+  .grid-videos{ display:grid; grid-template-columns:repeat(auto-fill, minmax(320px,1fr)); gap:22px; justify-items:center; }
   .video-card{ background:var(--white); border:1px solid var(--line); border-radius:10px; overflow:hidden; }
   .video-card .frame{ position:relative; width:100%; padding-top:56.25%; background:var(--ink); }
   .video-card .frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
@@ -618,9 +618,9 @@
   menuBtn.addEventListener('click', () => menuList.classList.toggle('abierto'));
 
   const videos = [
+    { tipo: "instagram", url: "https://www.instagram.com/reel/DSw5nbjjC17/", titulo: "Entrenamiento en video", desc: "Mirá el reel completo en @pfdarioblanco." },
+    { tipo: "instagram", url: "https://www.instagram.com/reel/DTIG1TQjHp-/", titulo: "Entrenamiento en video", desc: "Mirá el reel completo en @pfdarioblanco." },
     { tipo: "instagram", url: "https://www.instagram.com/p/DZnaW6pDC71/", titulo: "Publicación en Instagram", desc: "Mirá el contenido completo en @pfdarioblanco." },
-    { tipo: "youtube", id: "dQw4w9WgXcQ", titulo: "Ejemplo de video 1", desc: "Reemplazá este id por el de tu video real de YouTube." },
-    { tipo: "youtube", id: "dQw4w9WgXcQ", titulo: "Ejemplo de video 2", desc: "Reemplazá este id por el de tu video real de YouTube." },
   ];
 
   const gridVideos = document.getElementById('gridVideos');
@@ -628,12 +628,7 @@
   videos.forEach(v => {
     if (v.tipo === "instagram") {
       gridVideos.innerHTML += `
-        <div class="video-card">
-          <a class="frame link-card" href="${v.url}" target="_blank" rel="noopener">
-            <span class="play">▶</span>
-          </a>
-          <div class="info"><h3>${v.titulo}</h3><p>${v.desc}</p></div>
-        </div>`;
+        <blockquote class="instagram-media" data-instgrm-permalink="${v.url}" data-instgrm-version="14" style="width:100%; max-width:340px; margin:0;"></blockquote>`;
     } else {
       gridVideos.innerHTML += `
         <div class="video-card">
@@ -644,6 +639,13 @@
         </div>`;
     }
   });
+
+  // Cargamos el script oficial de Instagram para que muestre la miniatura real de cada video.
+  const igScript = document.createElement('script');
+  igScript.async = true;
+  igScript.src = "https://www.instagram.com/embed.js";
+  igScript.onload = () => { if (window.instgrm) window.instgrm.Embeds.process(); };
+  document.body.appendChild(igScript);
 
   const ejercicios = [
     { num: "01", nombre: "Rondo 4x4 + 2 comodines", objetivo: "Adaptación / conservación", desc: "Posesión en espacio amplio con comodines, ritmo bajo-moderado, pausas activas cada 3 minutos.", semana: "Semana 1" },
