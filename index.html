@@ -311,7 +311,7 @@
   #ejercicios .eyebrow{ color:var(--gold); }
   #ejercicios .section-head h2{ color:var(--paper); }
   #ejercicios .contador{ color:rgba(247,246,242,0.65); }
-  .grid-ejercicios{ display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:18px; }
+  .grid-ejercicios{ display:grid; grid-template-columns:repeat(auto-fill, minmax(320px,1fr)); gap:18px; justify-items:center; }
   .ejercicio{ background:rgba(247,246,242,0.06); border:1px solid rgba(247,246,242,0.18); padding:22px; border-radius:10px; }
   .ejercicio .tag{
     font-family:'JetBrains Mono', monospace; font-size:0.7rem; text-transform:uppercase;
@@ -711,22 +711,21 @@
   igScript.onload = () => { if (window.instgrm) window.instgrm.Embeds.process(); };
   document.body.appendChild(igScript);
 
+  // EJERCICIOS: playlist de YouTube. Cada video que subas a esa lista
+  // aparece acá automáticamente, sin tocar el código.
   const ejercicios = [
-    { num: "01", nombre: "Rondo 4x4 + 2 comodines", objetivo: "Adaptación / conservación", desc: "Posesión en espacio amplio con comodines, ritmo bajo-moderado, pausas activas cada 3 minutos.", semana: "Semana 1" },
-    { num: "02", nombre: "Duelos 1x1 + 1 comodín", objetivo: "Fuerza integrada", desc: "Arranque y frenado con oposición real, pelota que ingresa rápido hacia portería.", semana: "Semana 1-2" },
-    { num: "03", nombre: "Transición 3x3 + 1 comodín", objetivo: "Presión tras pérdida", desc: "Series cortas repetidas de transición ofensiva-defensiva tras recuperación.", semana: "Semana 2" },
-    { num: "04", nombre: "Bloqueos y paralelas 3x3", objetivo: "Ocupación de espacios", desc: "Juego reducido incorporando bloqueos, paralelas y sobreposiciones para generar ventajas.", semana: "Semana 3" },
+    { tipo: "youtube-playlist", id: "PLXmDqQuI0IEI", titulo: "Ejercicios de Futsal", desc: "Playlist en YouTube — se va a actualizar sola con cada ejercicio nuevo que subas a la lista." },
   ];
 
   const gridEjercicios = document.getElementById('gridEjercicios');
-  document.getElementById('contadorEjercicios').textContent = ejercicios.length + " drills";
+  document.getElementById('contadorEjercicios').textContent = "playlist en YouTube";
   ejercicios.forEach(e => {
     gridEjercicios.innerHTML += `
-      <div class="ejercicio">
-        <span class="tag">${e.num} · ${e.objetivo}</span>
-        <h3>${e.nombre}</h3>
-        <p>${e.desc}</p>
-        <div class="meta"><span>${e.semana}</span></div>
+      <div class="video-card">
+        <div class="frame">
+          <iframe src="https://www.youtube.com/embed/videoseries?list=${e.id}" title="${e.titulo}" allowfullscreen></iframe>
+        </div>
+        <div class="info"><h3>${e.titulo}</h3><p>${e.desc}</p></div>
       </div>`;
   });
 </script>
