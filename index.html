@@ -346,6 +346,24 @@
     font-family:'JetBrains Mono', monospace; font-size:0.74rem; letter-spacing:0.04em;
   }
   footer span{ color:var(--gold); }
+
+  /* ===== DESDE EL BANCO ===== */
+  #desde-el-banco{ background:var(--white); }
+  #desde-el-banco .intro-textos{ max-width:60ch; color:var(--ink-soft); margin:-18px 0 34px; }
+  .lista-textos{ display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:20px; }
+  .texto-card{
+    display:block; text-decoration:none; color:inherit; background:var(--paper);
+    border:1px solid var(--line); border-radius:12px; padding:26px;
+    transition:border-color .18s, transform .18s;
+  }
+  .texto-card:hover, .texto-card:focus-visible{ border-color:var(--teal); transform:translateY(-2px); }
+  .texto-card .tag{
+    font-family:'JetBrains Mono', monospace; font-size:0.7rem; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--teal);
+  }
+  .texto-card h3{ font-size:1.35rem; margin:10px 0; }
+  .texto-card p{ color:var(--ink-soft); font-size:0.93rem; }
+  .texto-card .meta{ margin-top:16px; font-family:'JetBrains Mono', monospace; font-size:0.74rem; color:var(--ink-soft); }
 </style>
 </head>
 <body>
@@ -364,6 +382,7 @@
         <li><a href="#manual">Manual</a></li>
         <li><a href="#videos">Videos</a></li>
         <li><a href="#ejercicios">Ejercicios</a></li>
+        <li><a href="#desde-el-banco">Desde el banco</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -620,6 +639,47 @@
   </div>
 </section>
 
+<!-- ===== DESDE EL BANCO ===== -->
+<section id="desde-el-banco">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Textos y reflexiones</span>
+        <h2>Desde el banco</h2>
+      </div>
+      <span class="contador">4 textos</span>
+    </div>
+    <p class="intro-textos">Lo que veo, lo que pienso y lo que leo sobre el juego y sobre quienes lo juegan, escrito desde el lugar del entrenador.</p>
+    <div class="lista-textos">
+      <!-- Para sumar un texto nuevo: copiá el bloque <a class="texto-card">...</a>, pegalo arriba del anterior, cambiá link, título y resumen, y actualizá el contador. -->
+      <a class="texto-card" href="desde-el-banco/cuando-no-jugas.html">
+        <span class="tag">Mente y competición</span>
+        <h3>Cuando no jugás</h3>
+        <p>Qué le pasa a quien está en el banco, por qué el banco también se castiga y cómo usar la rotación a favor del equipo.</p>
+        <div class="meta">Noviembre 2026 · 5 min de lectura</div>
+      </a>
+      <a class="texto-card" href="desde-el-banco/el-vestuario-como-equipo.html">
+        <span class="tag">Mente y competición</span>
+        <h3>El vestuario como equipo</h3>
+        <p>Cohesión y liderazgo: por qué un equipo no es el quinteto de los mejores y qué dice la investigación sobre capitanes y líderes informales.</p>
+        <div class="meta">Noviembre 2026 · 5 min de lectura</div>
+      </a>
+      <a class="texto-card" href="desde-el-banco/antes-del-pitazo.html">
+        <span class="tag">Mente y competición</span>
+        <h3>Antes del pitazo</h3>
+        <p>Qué hacer con los nervios antes de un partido: de la ansiedad como amenaza a la activación como aliada, con evidencia de deporte y de futsal.</p>
+        <div class="meta">Noviembre 2026 · 5 min de lectura</div>
+      </a>
+      <a class="texto-card" href="desde-el-banco/exigirse-sin-castigarse.html">
+        <span class="tag">Psicología del jugador</span>
+        <h3>Exigirse sin castigarse</h3>
+        <p>El error dura una acción; el castigo puede durar un partido. Sobre cómo sostener la exigencia sin romperse, con filosofía y evidencia de futsal.</p>
+        <div class="meta">Noviembre 2026 · 6 min de lectura</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CONTACTO ===== -->
 <section id="contacto">
   <div class="wrap">
@@ -662,7 +722,7 @@
   menuBtn.addEventListener('click', () => menuList.classList.toggle('abierto'));
 
   /* Animación suave al aparecer las secciones en pantalla */
-  const revelables = document.querySelectorAll('#sobre-mi, #manual .manual-intro, #manual .descarga-pdf, .capitulo, #videos .section-head, #ejercicios .section-head, #contacto .contacto-grid');
+  const revelables = document.querySelectorAll('#sobre-mi, #manual .manual-intro, #manual .descarga-pdf, .capitulo, #videos .section-head, #ejercicios .section-head, #desde-el-banco .wrap, #contacto .contacto-grid');
   revelables.forEach(el => el.classList.add('reveal'));
   const observador = new IntersectionObserver((entradas) => {
     entradas.forEach(entrada => {
