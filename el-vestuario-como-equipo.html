@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Darío">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>El vestuario como equipo: cohesión y liderazgo</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--rule:#d9d9d9;--hand:"Bradley Hand","Segoe Print","Comic Sans MS",cursive;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--fg:#ececec;--mut:#9a9a9a;--rule:#2a2a2a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.7 Georgia,"Times New Roman",serif}
+.hero{background:#000;color:#fff;padding:18vh 7vw 14vh;font-family:var(--hand);font-size:clamp(22px,5.4vw,40px);line-height:1.45;letter-spacing:.14em;text-transform:uppercase}
+.hero p{margin:0 0 .35em}
+.hero p:nth-child(2){margin-left:12%}
+.hero p:nth-child(3){margin-left:4%;margin-top:1.1em}
+.hero p:nth-child(4){margin-left:16%}
+main{max-width:40rem;margin:0 auto;padding:3.5rem 1.4rem 5rem}
+h1{font-size:clamp(34px,7vw,52px);line-height:1.1;margin:0 0 .3em;font-weight:700}
+.sub{color:var(--mut);font-style:italic;margin:0 0 3rem}
+h2{font-size:1.45rem;line-height:1.25;margin:3rem 0 .8rem;font-weight:700}
+p{margin:0 0 1.15rem}
+a{color:inherit}
+sup a{text-decoration:none;font-size:.7em;color:var(--mut)}
+.scene{border:1px dashed var(--mut);padding:1rem 1.2rem;margin:1.6rem 0;color:var(--mut);font-style:italic}
+.close{font-family:var(--hand);font-size:1.45rem;line-height:1.5;margin:2.2rem 0 0;padding-left:1.1rem;border-left:3px solid var(--fg)}
+ol.refs{padding-left:1.4rem;font-size:.9rem;line-height:1.55;color:var(--mut)}
+ol.refs li{margin-bottom:.55rem}
+.todo{border-bottom:1px dotted var(--mut);font-style:italic}
+hr{border:0;border-top:1px solid var(--rule);margin:3rem 0 0}
+.back{margin:0 0 2.5rem;font-size:.9rem}
+.by{color:var(--mut);font-size:.92rem;line-height:1.5;margin:-2.2rem 0 3rem}
+.sign{margin:2rem 0 0;font-family:var(--hand);font-size:1.5rem;line-height:1.2}
+.sign span{font-family:Georgia,serif;font-size:.85rem;color:var(--mut)}
+.foot{margin:2.5rem 0 0;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--mut)}
+body::after{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;opacity:.1;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='380' height='220'><text x='190' y='115' text-anchor='middle' transform='rotate(-24 190 110)' font-family='Georgia,serif' font-size='15' fill='%23888'>pfdarioblanco.github.io/pfdarioblanco</text></svg>")}
+@media print{body::after{opacity:.14}}
+header.top{position:sticky;top:0;z-index:60;background:rgba(18,24,31,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+header.top .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 28px;max-width:1100px;margin:0 auto;font-family:'Inter',system-ui,sans-serif;line-height:1.15}
+.marca-nav{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca-nav .badge{width:38px;height:38px;border-radius:50%;background:linear-gradient(155deg,#28675C,#1B4A42);display:flex;align-items:center;justify-content:center;font:700 .95rem 'Space Grotesk',sans-serif;color:#F7F6F2;flex-shrink:0}
+.marca-nav .txt{display:flex;flex-direction:column}
+.marca-nav .txt strong{font:600 1rem 'Space Grotesk',sans-serif;color:#F7F6F2}
+.marca-nav .txt span{font:400 .65rem 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#C79A3C}
+nav.links ul{list-style:none;display:flex;gap:4px;align-items:center;margin:0;padding:0;overflow-x:auto}
+nav.links a{text-decoration:none;font-size:.9rem;font-weight:500;color:rgba(247,246,242,.78);padding:9px 14px;border-radius:100px;white-space:nowrap}
+nav.links a:hover,nav.links a[aria-current]{background:rgba(247,246,242,.12);color:#F7F6F2}
+@media (max-width:800px){header.top .nav{flex-direction:column;align-items:flex-start;padding:12px 18px}nav.links{max-width:100%;width:100%}}
+h1,h2{font-family:'Space Grotesk',system-ui,sans-serif}
+</style>
+</head>
+<body>
+<header class="top"><div class="nav">
+<a class="marca-nav" href="../"><span class="badge">DB</span><span class="txt"><strong>Darío Blanco</strong><span>Fútbol Sala</span></span></a>
+<nav class="links"><ul>
+<li><a href="../#manual">Manual</a></li><li><a href="../#videos">Videos</a></li><li><a href="../#ejercicios">Ejercicios</a></li><li><a href="../#desde-el-banco" aria-current="page">Desde el banco</a></li><li><a href="../#contacto">Contacto</a></li>
+</ul></nav></div></header>
+<header class="hero" aria-label="Apertura">
+<p>Un equipo no es</p>
+<p>el quinteto de los mejores.</p>
+<p>Es cómo se hablan</p>
+<p>cuando fallan.</p>
+</header>
+<main>
+<p class="back"><a href="../#desde-el-banco">&larr; Desde el banco</a></p>
+<h1>El vestuario como equipo</h1>
+<p class="sub">Cohesión y liderazgo: lo que dice la investigación y lo que busco desde el banco</p>
+<p class="by">Por Darío, profesor de educación física y entrenador de fútbol sala<br>pfdarioblanco.github.io/pfdarioblanco</p>
+
+<p>Un equipo no es la suma de sus mejores jugadores/as. Es lo que pasa entre ellos/as cuando el partido se complica: quién habla, quién se hace cargo, quién le dice algo al que acaba de fallar. Eso suele llamarse cohesión y liderazgo, y la investigación tiene bastante para decir sobre las dos cosas.</p>
+
+<h2>Cohesión y rendimiento</h2>
+<p>El meta-análisis más citado sobre el tema reunió 46 estudios y 164 resultados, con casi 10.000 deportistas de más de mil equipos. Encontró una relación de moderada a grande entre cohesión y rendimiento<sup><a href="#r1">[1]</a></sup>. Dos aclaraciones. La relación va en los dos sentidos: un equipo unido rinde mejor, pero rendir bien también une<sup><a href="#r1">[1]</a></sup>. Y la cohesión tiene dos caras: la social (llevarse bien) y la de tarea (ir juntos hacia el objetivo)<sup><a href="#r1">[1]</a></sup>.</p>
+<p>En futsal, los estudios que encontré conectan la cohesión con algo que ya vimos en “Exigirse sin castigarse”: en futsal brasileño, la preocupación excesiva por los errores se asoció con peor cohesión social y de tarea<sup><a href="#r2">[2]</a></sup>, y en 301 jugadores de la Liga Nacional de Futsal 2013 los rasgos de preocupación predecían menor cohesión<sup><a href="#r3">[3]</a></sup>. Dicho simple: el que se castiga mucho suele ser más difícil de acompañar, y el grupo lo siente.</p>
+
+<h2>Liderazgo: la cinta no alcanza</h2>
+<p>Una investigación con 4.451 jugadores/as y entrenadores/as de distintos deportes (no específicamente futsal) mostró algo incómodo: casi la mitad no veía a su capitán/a como el/la mejor líder en ninguno de cuatro roles: el táctico, el motivacional, el social y el que representa al equipo hacia afuera<sup><a href="#r4">[4]</a></sup>. Los líderes informales, sin cinta, puntuaban mejor<sup><a href="#r4">[4]</a></sup>. Según la propia autora, los equipos con liderazgo repartido tienen más confianza, más identificación con el equipo y mejor posición en la tabla<sup><a href="#r5">[5]</a></sup>.</p>
+<p>Otro estudio encontró que quienes se motivan a sí mismos, motivan a los demás y tienen buenas habilidades sociales resultan mejores capitanes/as que quienes son elegidos/as por razones ajenas al liderazgo<sup><a href="#r6">[6]</a></sup>.</p>
+
+<h2>Lo que yo probaría</h2>
+<p>Son ideas para ensayar, no una receta:</p>
+<p><b>Mirar quién cumple cada rol.</b> Quién ordena tácticamente, quién levanta al grupo cuando se cae, quién cuida el clima. No siempre es quien lleva la cinta.</p>
+<p><b>Elegir capitán/a por lo que hace, no por la antigüedad.</b> Motivación y habilidades sociales, según el estudio anterior<sup><a href="#r6">[6]</a></sup>.</p>
+<p><b>Cuidar las dos cohesiones.</b> Las cenas ayudan, pero no alcanzan: también hace falta claridad en los objetivos y en los roles. Y ojo con las expectativas: los resultados de las actividades de “team building” son dispares<sup><a href="#r7">[7]</a></sup>.</p>
+
+<h2>Lo que quiero para mi equipo</h2>
+<p>Un vestuario donde fallar no sea quedar solo/a. Donde el castigo interno de cada uno/a no se contagie, y donde alguien, no necesariamente el/la capitán/a, sepa decir la frase justa en el momento justo.</p>
+<p class="close">Un equipo se ve<br>en cómo se habla<br>después del error.</p>
+<p class="sign">Darío<br><span>pfdarioblanco.github.io/pfdarioblanco</span></p>
+
+<hr>
+<h2>Referencias</h2>
+<ol class="refs">
+<li id="r1">Carron, A. V., Colman, M. M., Wheeler, J. y Stevens, D. (2002). Cohesion and performance in sport: A meta-analysis. <i>Journal of Sport and Exercise Psychology</i>, 24(2), 168-188. DOI: 10.1123/jsep.24.2.168</li>
+<li id="r2">The predicting role of perfectionism on team cohesion among Brazilian futsal athletes. <i>Motriz</i>. <span class="todo">Completar autores y año.</span></li>
+<li id="r3">The impact of perfectionism traits on perceived team cohesion of futsal players. <i>Cuadernos de Psicología del Deporte</i>. <span class="todo">Completar autores y año.</span></li>
+<li id="r4">Fransen y colaboradores (2014). The myth of the team captain as principal leader: extending the athlete leadership classification within sport teams. <i>Journal of Sports Sciences</i>. DOI: 10.1080/02640414.2014.891291 <span class="todo">Completar lista de autores.</span></li>
+<li id="r5">Fransen, K. The power of empowerment. FIFA Training Centre (conocimiento experto). fifatrainingcentre.com/en/environment/expert-knowledge/the-power-of-empowerment.php</li>
+<li id="r6">Butalia, R., Fransen, K., Coffee, P., Laenens, J. y Boen, F. (2021). Why the chosen ones may not always be the best leaders: criteria for captain selection as predictors of leadership quality and acceptance. <i>Frontiers in Psychology</i>, 11, 616966.</li>
+<li id="r7">Senecal, J., Loughead, T. M. y Bloom, G. A. (2008). A season-long team-building intervention: examining the effect of team goal setting on cohesion. <i>Journal of Sport and Exercise Psychology</i>, 30(2), 186-199.</li>
+</ol>
+<p class="foot">© 2026 Darío, pfdarioblanco.github.io/pfdarioblanco. Este texto es de mi autoría. Si lo compartís, citá la fuente y el link.</p>
+</main>
+</body>
+</html>

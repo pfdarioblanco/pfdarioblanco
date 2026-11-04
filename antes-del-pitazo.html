@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Darío">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Antes del pitazo: qué hacer con los nervios antes de un partido</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--rule:#d9d9d9;--hand:"Bradley Hand","Segoe Print","Comic Sans MS",cursive;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--fg:#ececec;--mut:#9a9a9a;--rule:#2a2a2a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.7 Georgia,"Times New Roman",serif}
+.hero{background:#000;color:#fff;padding:18vh 7vw 14vh;font-family:var(--hand);font-size:clamp(22px,5.4vw,40px);line-height:1.45;letter-spacing:.14em;text-transform:uppercase}
+.hero p{margin:0 0 .35em}
+.hero p:nth-child(2){margin-left:12%}
+.hero p:nth-child(3){margin-left:4%;margin-top:1.1em}
+.hero p:nth-child(4){margin-left:16%}
+main{max-width:40rem;margin:0 auto;padding:3.5rem 1.4rem 5rem}
+h1{font-size:clamp(34px,7vw,52px);line-height:1.1;margin:0 0 .3em;font-weight:700}
+.sub{color:var(--mut);font-style:italic;margin:0 0 3rem}
+h2{font-size:1.45rem;line-height:1.25;margin:3rem 0 .8rem;font-weight:700}
+p{margin:0 0 1.15rem}
+a{color:inherit}
+sup a{text-decoration:none;font-size:.7em;color:var(--mut)}
+.scene{border:1px dashed var(--mut);padding:1rem 1.2rem;margin:1.6rem 0;color:var(--mut);font-style:italic}
+.close{font-family:var(--hand);font-size:1.45rem;line-height:1.5;margin:2.2rem 0 0;padding-left:1.1rem;border-left:3px solid var(--fg)}
+ol.refs{padding-left:1.4rem;font-size:.9rem;line-height:1.55;color:var(--mut)}
+ol.refs li{margin-bottom:.55rem}
+.todo{border-bottom:1px dotted var(--mut);font-style:italic}
+hr{border:0;border-top:1px solid var(--rule);margin:3rem 0 0}
+.back{margin:0 0 2.5rem;font-size:.9rem}
+.by{color:var(--mut);font-size:.92rem;line-height:1.5;margin:-2.2rem 0 3rem}
+.sign{margin:2rem 0 0;font-family:var(--hand);font-size:1.5rem;line-height:1.2}
+.sign span{font-family:Georgia,serif;font-size:.85rem;color:var(--mut)}
+.foot{margin:2.5rem 0 0;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--mut)}
+body::after{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;opacity:.1;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='380' height='220'><text x='190' y='115' text-anchor='middle' transform='rotate(-24 190 110)' font-family='Georgia,serif' font-size='15' fill='%23888'>pfdarioblanco.github.io/pfdarioblanco</text></svg>")}
+@media print{body::after{opacity:.14}}
+header.top{position:sticky;top:0;z-index:60;background:rgba(18,24,31,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+header.top .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 28px;max-width:1100px;margin:0 auto;font-family:'Inter',system-ui,sans-serif;line-height:1.15}
+.marca-nav{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca-nav .badge{width:38px;height:38px;border-radius:50%;background:linear-gradient(155deg,#28675C,#1B4A42);display:flex;align-items:center;justify-content:center;font:700 .95rem 'Space Grotesk',sans-serif;color:#F7F6F2;flex-shrink:0}
+.marca-nav .txt{display:flex;flex-direction:column}
+.marca-nav .txt strong{font:600 1rem 'Space Grotesk',sans-serif;color:#F7F6F2}
+.marca-nav .txt span{font:400 .65rem 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#C79A3C}
+nav.links ul{list-style:none;display:flex;gap:4px;align-items:center;margin:0;padding:0;overflow-x:auto}
+nav.links a{text-decoration:none;font-size:.9rem;font-weight:500;color:rgba(247,246,242,.78);padding:9px 14px;border-radius:100px;white-space:nowrap}
+nav.links a:hover,nav.links a[aria-current]{background:rgba(247,246,242,.12);color:#F7F6F2}
+@media (max-width:800px){header.top .nav{flex-direction:column;align-items:flex-start;padding:12px 18px}nav.links{max-width:100%;width:100%}}
+h1,h2{font-family:'Space Grotesk',system-ui,sans-serif}
+</style>
+</head>
+<body>
+<header class="top"><div class="nav">
+<a class="marca-nav" href="../"><span class="badge">DB</span><span class="txt"><strong>Darío Blanco</strong><span>Fútbol Sala</span></span></a>
+<nav class="links"><ul>
+<li><a href="../#manual">Manual</a></li><li><a href="../#videos">Videos</a></li><li><a href="../#ejercicios">Ejercicios</a></li><li><a href="../#desde-el-banco" aria-current="page">Desde el banco</a></li><li><a href="../#contacto">Contacto</a></li>
+</ul></nav></div></header>
+<header class="hero" aria-label="Apertura">
+<p>Los nervios no avisan</p>
+<p>que algo va mal.</p>
+<p>Avisan</p>
+<p>que algo importa.</p>
+</header>
+<main>
+<p class="back"><a href="../#desde-el-banco">&larr; Desde el banco</a></p>
+<h1>Antes del pitazo</h1>
+<p class="sub">Qué hacer con los nervios antes de un partido</p>
+<p class="by">Por Darío, profesor de educación física y entrenador de fútbol sala<br>pfdarioblanco.github.io/pfdarioblanco</p>
+
+<p>Cualquiera que haya pasado por un vestuario antes de un partido conoce ese momento: el silencio raro, el que se ata los cordones por tercera vez, la risa que llega un poco tarde. Son los nervios previos. Y casi siempre se los trata como un problema que hay que apagar.</p>
+
+<h2>Los nervios no son el enemigo</h2>
+<p>Antes de competir el cuerpo se activa: el corazón late más rápido, la respiración se acelera, aparece el nudo en el estómago. Eso es activación, y es parte de prepararse para rendir. Lo que cambia es la historia que le ponemos encima. La misma activación puede leerse como amenaza (“me va a salir mal”) o como oportunidad (“estoy listo/a”).</p>
+
+<h2>¿Calmarse o entusiasmarse?</h2>
+<p>La reacción más común es decirle a alguien “tranquilo/a”. Alison Wood Brooks, de Harvard, mostró que quizá no sea el mejor consejo. En sus experimentos, quienes se decían “estoy entusiasmado/a” antes de cantar, hablar en público o resolver problemas de matemática rindieron mejor que quienes se decían “estoy tranquilo/a”<sup><a href="#r1">[1]</a></sup>. Su explicación: la ansiedad y el entusiasmo son dos estados de alta activación, así que pasar de uno a otro solo exige cambiar la lectura, mientras que calmarse exige además bajar la activación<sup><a href="#r1">[1]</a></sup>.</p>
+<p>Un límite importante: esos experimentos no fueron con deportistas. Son una pista interesante, no una prueba para el futsal.</p>
+
+<h2>Lo que se sabe en deporte</h2>
+<p>Un meta-análisis de 2025 reunió 24 estudios con 853 deportistas y encontró que las intervenciones psicológicas reducen la ansiedad de forma importante, sobre todo el entrenamiento tradicional en habilidades psicológicas, aunque con mucha variabilidad entre estudios<sup><a href="#r2">[2]</a></sup>. Otro, sobre programas de mindfulness, halló un efecto de mediano a grande sobre la ansiedad competitiva en 20 estudios<sup><a href="#r3">[3]</a></sup>.</p>
+<p>En futsal hay menos evidencia, pero existe. En 13 jugadores de liga nacional, diez sesiones de entrenamiento psicológico y mindfulness se asociaron con mejoras en dureza mental, ansiedad cognitiva y afrontamiento<sup><a href="#r4">[4]</a></sup>; es una muestra pequeña y sin grupo de comparación. Y en futsal profesional, los jugadores con más éxito puntuaban más alto en fijación de metas y preparación mental<sup><a href="#r5">[5]</a></sup>.</p>
+
+<h2>Lo que yo probaría</h2>
+<p>Son ideas para ensayar en el grupo, no una receta:</p>
+<p><b>Ponerle nombre a lo que pasa.</b> “Estoy activado/a, mi cuerpo se está preparando.” Es más útil que “tengo que calmarme”, y es lo que sugiere la investigación de Brooks.</p>
+<p><b>Llevar el foco a lo que depende de uno.</b> Epicteto decía que nos perturban menos las cosas que la opinión que tenemos de ellas, y que conviene ocuparse de lo que está en nuestras manos<sup><a href="#r6">[6]</a></sup>. En el partido: la primera acción, la comunicación, la posición. El resultado queda afuera.</p>
+<p><b>Hablarlo en el equipo.</b> Que sentir nervios no sea un secreto. Si son muy intensos, o aparecen también fuera de la cancha, conviene consultar con un profesional de la psicología del deporte.</p>
+
+<h2>Lo que quiero para mi equipo</h2>
+<p>No quiero jugadores/as que no sientan nada. Quiero que lo que sienten antes del pitazo trabaje a su favor, y que el primer error no lo convierta en castigo.</p>
+<p class="close">Los nervios no avisan que algo va mal.<br>Avisan que algo importa.</p>
+<p class="sign">Darío<br><span>pfdarioblanco.github.io/pfdarioblanco</span></p>
+
+<hr>
+<h2>Referencias</h2>
+<ol class="refs">
+<li id="r1">Brooks, A. W. (2014). Get excited: Reappraising pre-performance anxiety as excitement. <i>Journal of Experimental Psychology: General</i>, 143(3), 1144-1158. DOI: 10.1037/a0035325</li>
+<li id="r2">Li, H., Yang, Q. y Wang, B. (2025). Effects of psychological interventions on anxiety in athletes: a meta-analysis based on controlled trials. <i>Frontiers in Psychology</i>, 16, 1621635. DOI: 10.3389/fpsyg.2025.1621635</li>
+<li id="r3">Effects of mindfulness-based programs on competitive anxiety in sports: A meta-analysis. <i>Current Psychology</i>, 2024, 43(20), 18521-18533. DOI: 10.1007/s12144-024-05648-8 <span class="todo">Completar autores.</span></li>
+<li id="r4">Vella-Fondacaro, D. y Romano-Smith, S. (2023). The Impact of a Psychological Skills Training and Mindfulness-Based Intervention on the Mental Toughness, Competitive Anxiety, and Coping Skills of Futsal Players. <i>Sports</i>, 11(9), 162.</li>
+<li id="r5">Influence of Mental Skills on Competitive Anxiety in Professional Futsal Players: Difference by Successful and Unsuccessful Players. <span class="todo">Completar autores, revista y año.</span></li>
+<li id="r6">Epicteto. <i>Enquiridión (Manual)</i>, §§ 1 y 5. <span class="todo">Citar la edición que uses.</span></li>
+</ol>
+<p class="foot">© 2026 Darío, pfdarioblanco.github.io/pfdarioblanco. Este texto es de mi autoría. Si lo compartís, citá la fuente y el link.</p>
+</main>
+</body>
+</html>
