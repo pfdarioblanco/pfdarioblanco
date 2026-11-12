@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Darío">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Ganar o formar: competir en las bases</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--rule:#d9d9d9;--hand:"Bradley Hand","Segoe Print","Comic Sans MS",cursive;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--fg:#ececec;--mut:#9a9a9a;--rule:#2a2a2a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.7 Georgia,"Times New Roman",serif}
+.hero{background:#000;color:#fff;padding:18vh 7vw 14vh;font-family:var(--hand);font-size:clamp(22px,5.4vw,40px);line-height:1.45;letter-spacing:.14em;text-transform:uppercase}
+.hero p{margin:0 0 .35em}
+.hero p:nth-child(2){margin-left:12%}
+.hero p:nth-child(3){margin-left:4%;margin-top:1.1em}
+.hero p:nth-child(4){margin-left:16%}
+main{max-width:40rem;margin:0 auto;padding:3.5rem 1.4rem 5rem}
+h1{font-size:clamp(34px,7vw,52px);line-height:1.1;margin:0 0 .3em;font-weight:700}
+.sub{color:var(--mut);font-style:italic;margin:0 0 3rem}
+h2{font-size:1.45rem;line-height:1.25;margin:3rem 0 .8rem;font-weight:700}
+p{margin:0 0 1.15rem}
+a{color:inherit}
+sup a{text-decoration:none;font-size:.7em;color:var(--mut)}
+.scene{border:1px dashed var(--mut);padding:1rem 1.2rem;margin:1.6rem 0;color:var(--mut);font-style:italic}
+.close{font-family:var(--hand);font-size:1.45rem;line-height:1.5;margin:2.2rem 0 0;padding-left:1.1rem;border-left:3px solid var(--fg)}
+ol.refs{padding-left:1.4rem;font-size:.9rem;line-height:1.55;color:var(--mut)}
+ol.refs li{margin-bottom:.55rem}
+hr{border:0;border-top:1px solid var(--rule);margin:3rem 0 0}
+.back{margin:0 0 2.5rem;font-size:.9rem}
+.by{color:var(--mut);font-size:.92rem;line-height:1.5;margin:-2.2rem 0 3rem}
+.sign{margin:2rem 0 0;font-family:var(--hand);font-size:1.5rem;line-height:1.2}
+.sign span{font-family:Georgia,serif;font-size:.85rem;color:var(--mut)}
+.foot{margin:2.5rem 0 0;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--mut)}
+body::after{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;opacity:.1;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='380' height='220'><text x='190' y='115' text-anchor='middle' transform='rotate(-24 190 110)' font-family='Georgia,serif' font-size='15' fill='%23888'>pfdarioblanco.github.io/pfdarioblanco</text></svg>")}
+@media print{body::after{opacity:.14}}
+header.top{position:sticky;top:0;z-index:60;background:rgba(18,24,31,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+header.top .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 28px;max-width:1100px;margin:0 auto;font-family:'Inter',system-ui,sans-serif;line-height:1.15}
+.marca-nav{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca-nav .badge{width:38px;height:38px;border-radius:50%;background:linear-gradient(155deg,#28675C,#1B4A42);display:flex;align-items:center;justify-content:center;font:700 .95rem 'Space Grotesk',sans-serif;color:#F7F6F2;flex-shrink:0}
+.marca-nav .txt{display:flex;flex-direction:column}
+.marca-nav .txt strong{font:600 1rem 'Space Grotesk',sans-serif;color:#F7F6F2}
+.marca-nav .txt span{font:400 .65rem 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#C79A3C}
+nav.links ul{list-style:none;display:flex;gap:4px;align-items:center;margin:0;padding:0;overflow-x:auto}
+nav.links a{text-decoration:none;font-size:.9rem;font-weight:500;color:rgba(247,246,242,.78);padding:9px 14px;border-radius:100px;white-space:nowrap}
+nav.links a:hover,nav.links a[aria-current]{background:rgba(247,246,242,.12);color:#F7F6F2}
+@media (max-width:800px){header.top .nav{flex-direction:column;align-items:flex-start;padding:12px 18px}nav.links{max-width:100%;width:100%}}
+h1,h2{font-family:'Space Grotesk',system-ui,sans-serif}
+</style>
+</head>
+<body>
+<header class="top"><div class="nav">
+<a class="marca-nav" href="../"><span class="badge">DB</span><span class="txt"><strong>Darío Blanco</strong><span>Fútbol Sala</span></span></a>
+<nav class="links"><ul>
+<li><a href="../#manual">Manual</a></li><li><a href="../#videos">Videos</a></li><li><a href="../#ejercicios">Ejercicios</a></li><li><a href="../#desde-el-banco" aria-current="page">Desde el banco</a></li><li><a href="../#contacto">Contacto</a></li>
+</ul></nav></div></header>
+<header class="hero" aria-label="Apertura">
+<p>Ganar importa.</p>
+<p>Pero en las bases</p>
+<p>importa más</p>
+<p>qué queda después.</p>
+</header>
+<main>
+<p class="back"><a href="../#desde-el-banco">&larr; Desde el banco</a></p>
+<h1>Ganar o formar</h1>
+<p class="sub">Competir en las bases: qué dice la investigación sobre selección, edad y especialización</p>
+<p class="by">Por Darío, profesor de educación física y entrenador de fútbol sala<br>pfdarioblanco.github.io/pfdarioblanco</p>
+
+<p>En las categorías formativas aparece siempre la misma tensión: queremos ganar y queremos formar. No son opuestos, pero a veces tiran para lados distintos. La formación que gana el sábado no siempre es la que más hace crecer a todos/as. Y hay tres cosas que la investigación en futsal y en deporte juvenil nos puede ayudar a mirar.</p>
+
+<h2>La selección tiene un sesgo</h2>
+<p>Las categorías se arman por año de nacimiento, y eso genera lo que se llama efecto de la edad relativa: los/as nacidos/as en los primeros meses del año suelen sacar ventaja física sobre los/as que nacieron al final, y esa ventaja puede confundirse con talento.</p>
+<p>En futsal brasileño, un estudio con 2.676 jóvenes de sub-9 a sub-20 encontró ese efecto en la selección de los varones, pero no se asoció con mejor rendimiento de los equipos, salvo en la sub-13. Los autores recomiendan valorar otros factores al armar los equipos<sup><a href="#r1">[1]</a></sup>. En Portugal, con los registros federativos de la temporada 2019/20, se observó el efecto en futsal femenino y masculino, sobre todo en varones, en categorías más chicas y en clubes con mayor nivel de certificación<sup><a href="#r2">[2]</a></sup>. Y en profesionales de la Primera División española, otro estudio describe una inversión del efecto a lo largo de nueve temporadas<sup><a href="#r3">[3]</a></sup>.</p>
+
+<h2>Especializarse pronto no es el camino más corto</h2>
+<p>Un meta-análisis con 51 estudios y 6.096 deportistas, entre ellos 772 de élite mundial, encontró que los/as mejores adultos/as habían practicado más deportes de chicos/as, habían empezado su deporte principal más tarde, acumulado menos práctica en él y progresado más lento al principio<sup><a href="#r4">[4]</a></sup>. En juveniles, en cambio, quienes rendían más habían empezado antes y practicado más su deporte principal<sup><a href="#r4">[4]</a></sup>. Los autores plantean que las organizaciones eligen entre reforzar el éxito juvenil rápido o facilitar el desarrollo a largo plazo<sup><a href="#r4">[4]</a></sup>.</p>
+<p>Dos límites. Es un meta-análisis de muchos deportes, no de futsal. Y habla de quienes llegan a la élite mundial, que no es el objetivo de la mayoría de nuestros/as jugadores/as.</p>
+
+<h2>Lo que pasa cuando se compite mal</h2>
+<p>Un meta-análisis de abandono con más de 6.000 adolescentes en deportes de equipo concluyó que la motivación y la experiencia deportiva son lo que más se relaciona con dejar de jugar, y que conviene cuidar un clima motivacional de calidad que favorezca la motivación y el disfrute<sup><a href="#r5">[5]</a></sup>. Si formar es que sigan jugando, ese dato pesa tanto como cualquier resultado.</p>
+
+<h2>Lo que yo probaría</h2>
+<p>Son ideas para ensayar, no una receta:</p>
+<p><b>Mirar las fechas de nacimiento de mi lista.</b> Si casi todos/as son del primer trimestre, algo estamos filtrando sin querer.</p>
+<p><b>Repartir minutos y posiciones.</b> Que los/as más chicos/as, más lentos/as o más tardíos/as no se queden siempre en el mismo rol.</p>
+<p><b>Medir el éxito con más de un indicador.</b> Resultado, sí. Pero también cuántos/as mejoraron, cuántos/as siguen jugando y cuántos/as disfrutan.</p>
+<p><b>Competir sí, pero explicándolo.</b> Competir no es el problema; lo es que la competencia decida quién crece y quién se va.</p>
+
+<h2>Lo que quiero para mi equipo</h2>
+<p>Que ganar sea una consecuencia de formar bien, no al revés.</p>
+<p class="close">Ganar es un resultado.<br>Formar es una decisión.</p>
+<p class="sign">Darío<br><span>pfdarioblanco.github.io/pfdarioblanco</span></p>
+
+<hr>
+<h2>Referencias</h2>
+<ol class="refs">
+<li id="r1">Leonardi, T. J., Kunrath, C. A., da Silva, I. F., Rucco, G. S., Aires, H., Berger, A. G. y Cardoso, M. F. S. (2022). The relative age effect on the selection of young athletes and the performance of Brazilian futsal teams. <i>Cuadernos de Psicología del Deporte</i>, 22(3), 212-226.</li>
+<li id="r2">Estudio con registros de la federación portuguesa (temporada 2019/20) sobre el efecto de la edad relativa en fútbol y futsal juvenil. PMC8194498.</li>
+<li id="r3">Estudio del efecto de la edad relativa en jugadores profesionales de futsal de la Primera División española (nueve temporadas). PMC7126250.</li>
+<li id="r4">Güllich, A., Macnamara, B. N. y Hambrick, D. Z. (2022). What makes a champion? Early multidisciplinary practice, not early specialization, predicts world-class performance. <i>Perspectives on Psychological Science</i>, 17(1), 6-29. DOI: 10.1177/1745691620974772</li>
+<li id="r5">Drop-out from team sport among adolescents: a systematic review and meta-analysis of prospective studies. <i>Psychology of Sport and Exercise</i>.</li>
+</ol>
+<p class="foot">© 2026 Darío, pfdarioblanco.github.io/pfdarioblanco. Este texto es de mi autoría. Si lo compartís, citá la fuente y el link.</p>
+</main>
+</body>
+</html>

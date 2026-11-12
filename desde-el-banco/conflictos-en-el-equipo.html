@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Darío">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Conflictos en el equipo: intensidad desigual, golpes y tensiones</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--rule:#d9d9d9;--hand:"Bradley Hand","Segoe Print","Comic Sans MS",cursive;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--fg:#ececec;--mut:#9a9a9a;--rule:#2a2a2a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.7 Georgia,"Times New Roman",serif}
+.hero{background:#000;color:#fff;padding:18vh 7vw 14vh;font-family:var(--hand);font-size:clamp(22px,5.4vw,40px);line-height:1.45;letter-spacing:.14em;text-transform:uppercase}
+.hero p{margin:0 0 .35em}
+.hero p:nth-child(2){margin-left:12%}
+.hero p:nth-child(3){margin-left:4%;margin-top:1.1em}
+.hero p:nth-child(4){margin-left:16%}
+main{max-width:40rem;margin:0 auto;padding:3.5rem 1.4rem 5rem}
+h1{font-size:clamp(34px,7vw,52px);line-height:1.1;margin:0 0 .3em;font-weight:700}
+.sub{color:var(--mut);font-style:italic;margin:0 0 3rem}
+h2{font-size:1.45rem;line-height:1.25;margin:3rem 0 .8rem;font-weight:700}
+p{margin:0 0 1.15rem}
+a{color:inherit}
+sup a{text-decoration:none;font-size:.7em;color:var(--mut)}
+.scene{border:1px dashed var(--mut);padding:1rem 1.2rem;margin:1.6rem 0;color:var(--mut);font-style:italic}
+.close{font-family:var(--hand);font-size:1.45rem;line-height:1.5;margin:2.2rem 0 0;padding-left:1.1rem;border-left:3px solid var(--fg)}
+ol.refs{padding-left:1.4rem;font-size:.9rem;line-height:1.55;color:var(--mut)}
+ol.refs li{margin-bottom:.55rem}
+hr{border:0;border-top:1px solid var(--rule);margin:3rem 0 0}
+.back{margin:0 0 2.5rem;font-size:.9rem}
+.by{color:var(--mut);font-size:.92rem;line-height:1.5;margin:-2.2rem 0 3rem}
+.sign{margin:2rem 0 0;font-family:var(--hand);font-size:1.5rem;line-height:1.2}
+.sign span{font-family:Georgia,serif;font-size:.85rem;color:var(--mut)}
+.foot{margin:2.5rem 0 0;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--mut)}
+body::after{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;opacity:.1;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='380' height='220'><text x='190' y='115' text-anchor='middle' transform='rotate(-24 190 110)' font-family='Georgia,serif' font-size='15' fill='%23888'>pfdarioblanco.github.io/pfdarioblanco</text></svg>")}
+@media print{body::after{opacity:.14}}
+header.top{position:sticky;top:0;z-index:60;background:rgba(18,24,31,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+header.top .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 28px;max-width:1100px;margin:0 auto;font-family:'Inter',system-ui,sans-serif;line-height:1.15}
+.marca-nav{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca-nav .badge{width:38px;height:38px;border-radius:50%;background:linear-gradient(155deg,#28675C,#1B4A42);display:flex;align-items:center;justify-content:center;font:700 .95rem 'Space Grotesk',sans-serif;color:#F7F6F2;flex-shrink:0}
+.marca-nav .txt{display:flex;flex-direction:column}
+.marca-nav .txt strong{font:600 1rem 'Space Grotesk',sans-serif;color:#F7F6F2}
+.marca-nav .txt span{font:400 .65rem 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#C79A3C}
+nav.links ul{list-style:none;display:flex;gap:4px;align-items:center;margin:0;padding:0;overflow-x:auto}
+nav.links a{text-decoration:none;font-size:.9rem;font-weight:500;color:rgba(247,246,242,.78);padding:9px 14px;border-radius:100px;white-space:nowrap}
+nav.links a:hover,nav.links a[aria-current]{background:rgba(247,246,242,.12);color:#F7F6F2}
+@media (max-width:800px){header.top .nav{flex-direction:column;align-items:flex-start;padding:12px 18px}nav.links{max-width:100%;width:100%}}
+h1,h2{font-family:'Space Grotesk',system-ui,sans-serif}
+</style>
+</head>
+<body>
+<header class="top"><div class="nav">
+<a class="marca-nav" href="../"><span class="badge">DB</span><span class="txt"><strong>Darío Blanco</strong><span>Fútbol Sala</span></span></a>
+<nav class="links"><ul>
+<li><a href="../#manual">Manual</a></li><li><a href="../#videos">Videos</a></li><li><a href="../#ejercicios">Ejercicios</a></li><li><a href="../#desde-el-banco" aria-current="page">Desde el banco</a></li><li><a href="../#contacto">Contacto</a></li>
+</ul></nav></div></header>
+<header class="hero" aria-label="Apertura">
+<p>Un conflicto</p>
+<p>no rompe un equipo.</p>
+<p>Lo rompe</p>
+<p>lo que nadie dice.</p>
+</header>
+<main>
+<p class="back"><a href="../#desde-el-banco">&larr; Desde el banco</a></p>
+<h1>Conflictos en el equipo</h1>
+<p class="sub">Intensidad desigual, golpes y tensiones: lo que dice la investigación y cómo abordarlo desde el banco</p>
+<p class="by">Por Darío, profesor de educación física y entrenador de fútbol sala<br>pfdarioblanco.github.io/pfdarioblanco</p>
+
+<p>En todo grupo hay fricción. Alguien que entrena al máximo y alguien que va a media máquina. Una entrada más fuerte de la cuenta en un cinco contra cinco. Una mirada, un murmullo, un silencio que dura demasiado. La pregunta no es si va a pasar, sino qué hacemos cuando pasa. Y la investigación sobre esto, curiosamente, es más escasa de lo que uno imagina: una revisión de alcance encontró 80 trabajos relevantes, de los cuales solo 6 estudiaron directamente el conflicto interpersonal<sup><a href="#r1">[1]</a></sup>.</p>
+
+<h2>Dos tipos de conflicto</h2>
+<p>Conviene distinguir el conflicto de tarea (cómo jugamos, quién ocupa qué rol, qué se entrena) del conflicto de relación (lo personal, el trato, la antipatía)<sup><a href="#r2">[2]</a></sup>. En una tesis con deportistas universitarios, el conflicto de relación predijo la intención de dejar el deporte, mientras que el de tarea solo predijo la intención de cambiar de equipo; y la relación entre conflicto de relación y abandono era más débil en quienes tenían mayor compromiso afectivo con el equipo<sup><a href="#r2">[2]</a></sup>.</p>
+<p>Y hay un vínculo con nuestro primer texto. En 413 deportistas brasileños jóvenes, la preocupación excesiva por los errores se asoció con más conflicto de tarea y de relación<sup><a href="#r3">[3]</a></sup>. El que se castiga mucho suele discutir más, también con los demás.</p>
+
+<h2>Cuando la intensidad no es la misma</h2>
+<p>La tendencia a esforzarse menos cuando se trabaja en grupo que cuando se trabaja solo se llama pereza social, y un meta-análisis de 78 estudios mostró que es un efecto robusto<sup><a href="#r4">[4]</a></sup>. En equipos deportivos importa especialmente la percepción: en 118 futbolistas juveniles de Noruega, la cohesión y las normas del equipo se asociaron con menos pereza social percibida, y la combinación de mucha cohesión social, poca cohesión de tarea y pocas normas era el terreno donde esa percepción prosperaba<sup><a href="#r5">[5]</a></sup>. En criollo: un grupo muy amigo pero sin reglas claras de trabajo es el lugar donde uno se relaja y otro se enoja.</p>
+<p>Un estudio cualitativo con 20 deportistas de equipo encontró que la pereza percibida era más frecuente en el entrenamiento que en la competencia, que dañaba el esfuerzo del individuo y del equipo, y que los/as deportistas distinguían entre pereza y “descanso estratégico”<sup><a href="#r6">[6]</a></sup>. En futsal, con cambios ilimitados, esa distinción es clave: no es lo mismo recuperarse que no estar.</p>
+
+<h2>Cada uno tiene sus exigencias</h2>
+<p>Antes de hablar de golpes y de tensiones, hay algo que me parece importante decir: tu compañero/a no está buscando hacerte mal. Cuando aprieta, cuando te exige o cuando te marca algo en la cancha, lo más probable es que quiera lo mismo que vos: que el equipo funcione.</p>
+<p>Lo que pasa es que cada uno/a tiene sus propias exigencias. Lo que para una persona es dar el máximo, para otra es lo normal; y lo que a uno/a le parece una exigencia razonable, a otro/a le suena a presión. Nadie tiene por qué adivinarlas.</p>
+<p>Por eso es tan importante charlarlas. No en el calor de la discusión ni en medio del partido, sino antes, cuando todos/as están tranquilos/as: qué espera cada uno/a de los entrenamientos, qué entiende por esfuerzo, qué le molesta y qué necesita. A veces un conflicto de intensidad no es falta de ganas ni falta de respeto: son dos exigencias distintas que nunca se pusieron sobre la mesa.</p>
+
+<h2>Los golpes</h2>
+<p>Las entradas que se pasan de la raya no son solo un problema técnico. En 407 deportistas de equipo de 15,7 años de media, la desconexión moral (justificar un daño para hacerlo menos grave) se relacionó, a lo largo de una temporada, con conductas antisociales hacia rivales y compañeros/as<sup><a href="#r7">[7]</a></sup>. Un estudio de la Universidad de Birmingham describió que un entrenador controlador llevaba a esa desconexión y, a través de ella, a conductas antisociales hacia rivales y compañeros/as; y que recibirlas de un compañero/a, por ejemplo con abuso verbal, se asociaba con más ansiedad y síntomas de burnout, además de dañar el espíritu del equipo<sup><a href="#r8">[8]</a></sup>.</p>
+<p>Y en 194 futbolistas de 13 a 19 años, lo que mejor predecía su disposición a agredir era cuánto creían que su equipo toleraba la agresión, y declaraban que lo harían más si pensaban que su entrenador lo apoyaba<sup><a href="#r9">[9]</a></sup>. Son estudios de fútbol y de deportes de equipo, no de futsal, pero señalan lo mismo: la norma que sostiene el grupo, y lo que el entrenador/a deja pasar, pesa.</p>
+
+<h2>Lo que yo probaría</h2>
+<p>Son ideas para ensayar, no una receta:</p>
+<p><b>Acordar las normas con el grupo.</b> Qué es intensidad, qué es descanso, qué es una falta de respeto. Lo que no se nombra, cada uno lo interpreta a su manera.</p>
+<p><b>Una línea clara con los golpes.</b> Que el equipo sepa que un golpe intencionado, aunque sea en un entrenamiento, no se banaliza ni se festeja.</p>
+<p><b>No quedarse pasivo/a.</b> Una guía para entrenadores advierte que no actuar ante un conflicto puede escalarlo, deteriorar la relación y generar un clima tenso<sup><a href="#r10">[10]</a></sup>. Hablar a tiempo, en privado, con hechos y no con etiquetas.</p>
+<p><b>Revisar los roles.</b> En 225 futbolistas de la Primera División femenina española se estudió el conflicto de rol y el conflicto de equipo como debilitadores de la eficacia colectiva<sup><a href="#r11">[11]</a></sup>. Muchos choques son, en el fondo, falta de claridad sobre quién hace qué.</p>
+<p><b>Mirar mi propio estilo.</b> En categorías de formación, bajar los conflictos dentro del grupo y subir la cohesión de tarea durante la temporada se relacionó con mayor resiliencia del equipo, con el liderazgo del entrenador como pieza clave<sup><a href="#r12">[12]</a></sup>.</p>
+<p><b>Mediar.</b> Hay experiencias de mediación en clubes de base, incluida la gestión de la derrota, que es un momento donde se dispara la tensión<sup><a href="#r13">[13]</a></sup>.</p>
+<p>Y si hay violencia física repetida, acoso o un conflicto que supera al grupo, no conviene resolverlo solo/a: involucrar al club y, si hace falta, a un/a profesional.</p>
+
+<h2>Lo que quiero para mi equipo</h2>
+<p>Un grupo donde se pueda discrepar sin romperse y donde nadie tenga que aguantar un golpe o un desplante en silencio.</p>
+<p class="close">Los conflictos no se evitan.<br>Se atienden a tiempo.</p>
+<p class="sign">Darío<br><span>pfdarioblanco.github.io/pfdarioblanco</span></p>
+
+<hr>
+<h2>Referencias</h2>
+<ol class="refs">
+<li id="r1">Wachsmuth, S., Jowett, S. y Harwood, C. G. (2017). Conflict among athletes and their coaches: what is the theory and research so far? <i>International Review of Sport and Exercise Psychology</i>, 10(1), 84-107. DOI: 10.1080/1750984X.2016.1184698</li>
+<li id="r2">Tesis doctoral sobre conflicto intraequipo y gestión del conflicto en deporte (revisión de alcance y estudio con deportistas universitarios). Michigan State University. d.lib.msu.edu/etd/51945</li>
+<li id="r3">Freire, G. L. M., Fiorese, L., Moraes, J. F. V. N., Codonhato, R., Oliveira, D. V. y Nascimento Junior, J. R. A. (2022). Do perfectionism traits predict team cohesion and group conflict among youth athletes? <i>Perceptual and Motor Skills</i>, 129(3), 851-868.</li>
+<li id="r4">Karau, S. J. y Williams, K. D. (1993). Social loafing: a meta-analytic review and theoretical integration. <i>Journal of Personality and Social Psychology</i>, 65(4), 681-706.</li>
+<li id="r5">Høigaard, R., Säfvenbom, R. y Tønnessen, F. E. (2006). The relationship between group cohesion, group norms, and perceived social loafing in soccer teams. <i>Small Group Research</i>. DOI: 10.1177/1046496406287311</li>
+<li id="r6">“Just going through the motions…”: a qualitative exploration of athlete perceptions of social loafing in training and competition contexts. Implications for team sport coaches. <i>International Journal of Sports Science &amp; Coaching</i>, 2014, 9, 1067-1082.</li>
+<li id="r7">Boardley, I. D., Matosic, D. y Bruner, M. W. (2020). A longitudinal examination of the relations between moral disengagement and antisocial behavior in sport. <i>Journal of Sport and Exercise Psychology</i>.</li>
+<li id="r8">University of Birmingham (2019). Athletes suspend morality to pursue sporting success: study (estudio de M. Kavussanu). birmingham.ac.uk/news/2019/athletes-suspend-morality-to-pursue-sporting-success-study</li>
+<li id="r9">Guivernau, M. y Duda, J. L. (2002). Moral atmosphere and athletic aggressive tendencies in young soccer players. <i>Journal of Moral Education</i>, 31(1), 67-85. DOI: 10.1080/03057240120111445</li>
+<li id="r10">Gili, L. (2024). La importancia de los/las entrenadores/as en los equipos deportivos: comunicación y relaciones interpersonales. Federación de Baloncesto de la Comunidad Valenciana (blog).</li>
+<li id="r11">Leo, F. M., González-Ponce, I. y Sánchez Miguel, P. A. (2015). El conflicto de rol y el conflicto de equipo como debilitadores de la eficacia colectiva. <i>Revista de Psicología del Deporte</i>, 24(1), 171-176.</li>
+<li id="r12">López-Gajardo, M. A., Díaz-García, J., Rubio-Morales, A., Batista, M., Llanos-Muñoz, R. y Ponce-Bordón, J. C. (2022). ¿Influye el liderazgo del entrenador sobre la resiliencia de equipo? Efecto mediador de los conflictos intragrupo y la cohesión grupal. <i>Revista Latinoamericana de Psicología</i>.</li>
+<li id="r13">Pastor, X. <i>La resolución de conflictos y la mediación en el deporte</i>. Editorial UOC, cap. I “Conflictos en el deporte”, pp. 13-29.</li>
+</ol>
+<p class="foot">© 2026 Darío, pfdarioblanco.github.io/pfdarioblanco. Este texto es de mi autoría. Si lo compartís, citá la fuente y el link.</p>
+</main>
+</body>
+</html>
